@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import NavLink from "./components/NavLink";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -23,6 +24,64 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header>
+          <nav className="bg-white border-gray-200 px-4 lg:px-6 py-4">
+            <div className="flex flex-wrap justify-center items-center mx-auto max-w-screen-xl">
+              <div
+                className="hidden justify-center items-center w-full lg:flex lg:w-auto lg:order-1"
+                id="mobile-menu-2"
+              >
+                <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                  <li>
+                    <NavLink
+                      path="/"
+                      className="block py-2 pr-4 pl-3 rounded bg-primary-700 lg:p-0 "
+                      aria-current="page"
+                    >
+                      Home
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      path="/about"
+                      className="block py-2 pr-4 pl-3 rounded bg-primary-700 lg:p-0 "
+                      aria-current="page"
+                    >
+                      About
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      path="/analytics"
+                      className="block py-2 pr-4 pl-3 rounded bg-primary-700 lg:p-0 "
+                      aria-current="page"
+                    >
+                      Analytics
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      path="/settings"
+                      className="block py-2 pr-4 pl-3 rounded bg-primary-700 lg:p-0 "
+                      aria-current="page"
+                    >
+                      Settings
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      path="/blogs"
+                      className="block py-2 pr-4 pl-3 rounded bg-primary-700 lg:p-0 "
+                      aria-current="page"
+                    >
+                      Blogs
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
         {children}
       </body>
     </html>
